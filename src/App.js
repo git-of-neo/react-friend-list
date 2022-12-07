@@ -62,7 +62,9 @@ function App() {
         <input ref={passwordRef} id="password" defaultValue={"selena"}/>
         <button type='submit'>Log in</button>
       </form>
-    <input id="searchPage" placeholder='Page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+    {
+      loggedIn && <input id="searchPage" placeholder='Page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+    }
     {
       // TODO : unique key
       loggedIn && friends.length > 0 &&
