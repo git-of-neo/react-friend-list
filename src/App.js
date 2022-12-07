@@ -25,7 +25,7 @@ function App() {
 
   function handleSearch(e){
     if (e.key==="Enter" && e.target.checkValidity()){
-      console.log(e.target.value);
+      setPage(e.target.value);
     }
   }
 
@@ -62,7 +62,7 @@ function App() {
         <input ref={passwordRef} id="password" defaultValue={"selena"}/>
         <button type='submit'>Log in</button>
       </form>
-    <input id="searchPage" placeholder='Page no.' type="number" min="1" max="25" onKeyDown={(e)=>{handleSearch(e)}}/>
+    <input id="searchPage" placeholder='Page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
     {
       // TODO : unique key
       loggedIn && friends.length > 0 &&
