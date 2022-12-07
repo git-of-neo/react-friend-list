@@ -22,8 +22,8 @@ img, picture, svg, video {
     --fw-normal : 600;
 
     /* font familt */
-    --ff-bold : 'Fraunces', serif;
-    --ff-normal : 'Barlow', sans-serif;
+    --ff-bold : 'Playfair Display', serif;
+    --ff-normal : 'Source Sans Pro', sans-serif;
 
     /* background color */
     --clr-bg : rgb(25 25 25);
@@ -32,9 +32,10 @@ img, picture, svg, video {
     /* text color */
     --clr-neutral: rgb(240 240 240);
     --clr-anti: black;
+    --clr-anti-lighter: rgb(35, 35, 35);
+    --clr-anti-lighter-lighter: rgba(35, 35, 35, 0.6);
     --clr-primary-dark: #FC575E;
     --clr-primary-light: #F7B42C;
-
 }
 
 body {
@@ -45,6 +46,7 @@ body {
 
 * {
     font-family: var(--ff-normal);
+    font-weight: var(--fw-normal);
     font-size: 1rem;
     color: var(--clr-neutral);
 }
@@ -133,6 +135,15 @@ button {
     overflow: hidden;
     transition: max-height .5s;
     transition-timing-function: cubic-bezier(.16,.23,.77,.76);
+}
+
+.card__content > h2 {
+    font-weight: var(--fw-header);
+    color: var(--clr-anti-lighter);
+}
+
+.card__content > p {
+    color: var(--clr-anti-lighter-lighter);
 }
 
 .card-container:hover > .card >.card__content{

@@ -6,8 +6,7 @@ const FriendCard = ({ friend }) => {
             <div className='card'>
                 <img src={friend.picture.medium}></img>
                 <div className="card__content">
-                    <p>{friend.name.first}</p>
-                    <p>{friend.name.last}</p>
+                    <h2>{friend.name.first} {friend.name.last}</h2>
                     <p>{friend.phone}</p>
                     <p>{friend.email}</p>
                     {/* additional info */}
