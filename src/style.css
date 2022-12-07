@@ -27,6 +27,7 @@ img, picture, svg, video {
 
     /* background color */
     --clr-bg : rgb(25 25 25);
+    --clr-bg-lighter : rgb(35, 35, 35);
 
     /* text color */
     --clr-neutral: rgb(240 240 240);
@@ -101,7 +102,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    background-color: rgb(35, 35, 35);
+    background-color: var(--clr-bg-lighter);
     border-radius: 1rem;
 }
 
