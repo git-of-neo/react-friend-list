@@ -24,11 +24,28 @@ img, picture, svg, video {
     /* font familt */
     --ff-bold : 'Fraunces', serif;
     --ff-normal : 'Barlow', sans-serif;
+
+    /* background color */
+    --clr-bg : rgb(25 25 25);
+
+    /* text color */
+    --clr-neutral: rgb(240 240 240);
+    --clr-anti: black;
+    --clr-primary-dark: #FC575E;
+    --clr-primary-light: #F7B42C;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-bg);
 }
 
 * {
     font-family: var(--ff-normal);
     font-size: 1rem;
+    color: var(--clr-neutral);
 }
 
 h1 {
@@ -43,14 +60,54 @@ h2 {
     font-size: 1.75rem;
 }
 
+input {
+    padding: .5rem;
+    border-radius: 10px;
+    border: 5px solid var(--color, var(--clr-neutral));
+    color: var(--clr-anti);
+}
+
+button {
+    margin: 1rem 0rem;
+    color: var(--clr-anti);
+    padding: .5rem;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    background: linear-gradient(-45deg, var(--clr-primary-dark), var(--clr-primary-light));
+    background-size: 200%;
+    border: none;
+    animation: moving-gradient 5s ease infinite;
+}
+
+@keyframes moving-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-positionl: 0% 50%;
+    }
+}
+
 .app {
     max-width: 40rem;
-    margin: auto;
-    margin-top: 2rem;
+    margin: 3rem;
+}
+
+.login {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: rgb(35, 35, 35);
+    border-radius: 1rem;
 }
 
 .card-container {
-    background-color: orange;
+    background: linear-gradient(10deg, var(--clr-primary-dark), var(--clr-primary-light));
+    /* background-color: orange; */
     margin: 1rem;
     padding: 1rem;
     border-radius: 8px;
@@ -83,6 +140,7 @@ h2 {
 
 #searchPage {
     width: 100%;
+    text-align: center;
 }
 
 /* remove input arrows */

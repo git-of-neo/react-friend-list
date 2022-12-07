@@ -51,8 +51,8 @@ function App() {
 
   return (
     <div className="app">
-      <form style={style} onSubmit={submit}>
-        <h1>Log In</h1>
+      <form className = "login" style={style} onSubmit={submit}>
+        <h1>Login</h1>
         <label htmlFor="username">
           <h2>Username</h2>
         </label>
