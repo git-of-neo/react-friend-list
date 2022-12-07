@@ -74,8 +74,9 @@ function App() {
       // TODO : unique key
       loggedIn && friends.length > 0 &&
         <div className='friend-list'>
-          {friends.map(x => {
-            return <FriendCard friend = {x}/>
+          {friends.map((x, idx) => {
+            x.idx = idx;
+            return <FriendCard key={`page-${idx}`} friend = {x}/>
           })}
         </div>
     }

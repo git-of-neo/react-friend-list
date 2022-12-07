@@ -131,10 +131,6 @@ button {
     display: flex;
     flex-direction: column;
     gap: .25rem;
-    max-height: 5.5rem;
-    overflow: hidden;
-    transition: max-height .5s;
-    transition-timing-function: cubic-bezier(.16,.23,.77,.76);
 }
 
 .card__content > h2 {
@@ -146,8 +142,15 @@ button {
     color: var(--clr-anti-lighter-lighter);
 }
 
-.card-container:hover > .card >.card__content{
-    max-height: 10rem;
+.model-container {
+    /* display: flex;
+    flex-direction: column; */
+    margin: auto;
+}
+
+.model-container::backdrop{
+    background: rgb(0 0 0 / 0.5);
+    opacity: 1;
 }
 
 #searchPage {
