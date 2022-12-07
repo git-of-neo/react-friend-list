@@ -15,14 +15,45 @@ img, picture, svg, video {
 }
 
 /* styling */
+:root{
+    /* font weight */
+    --fw-header : 900;
+    --fw-bold : 700;
+    --fw-normal : 600;
+
+    /* font familt */
+    --ff-bold : 'Fraunces', serif;
+    --ff-normal : 'Barlow', sans-serif;
+}
+
 * {
-    font-size: 16px;
+    font-family: var(--ff-normal);
+    font-size: 1rem;
+}
+
+h1 {
+    font-family: var(--ff-bold);
+    font-weight: var(--fw-header);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--fw-bold);
+    font-size: 1.75rem;
+}
+
+.app {
+    max-width: 40rem;
+    margin: auto;
+    margin-top: 2rem;
 }
 
 .card-container {
     background-color: orange;
     margin: 1rem;
     padding: 1rem;
+    border-radius: 8px;
 }
 
 .card {
@@ -39,3 +70,17 @@ img, picture, svg, video {
     max-height: 10rem;
 }
 
+#searchPage {
+    width: 100%;
+}
+
+/* remove input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

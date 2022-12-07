@@ -52,18 +52,23 @@ function App() {
   return (
     <div className="app">
       <form style={style} onSubmit={submit}>
+        <h1>Log In</h1>
         <label htmlFor="username">
-          Username
+          <h2>Username</h2>
         </label>
         <input ref={usernameRef} id="username" defaultValue={"beautifultiger295"}/>
         <label htmlFor="password">
-          Password
+          <h2>Password</h2>
         </label>
-        <input ref={passwordRef} id="password" defaultValue={"selena"}/>
+        <input ref={passwordRef} type="password" id="password" defaultValue={"selena"}/>
         <button type='submit'>Log in</button>
       </form>
     {
-      loggedIn && <input id="searchPage" placeholder='Page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+      loggedIn && 
+      <>
+        <h1> Friend List </h1>
+        <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+      </>
     }
     {
       // TODO : unique key
