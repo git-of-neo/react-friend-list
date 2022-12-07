@@ -139,7 +139,7 @@ button {
 
 .card__content > h2 {
     font-weight: var(--fw-header);
-    color: var(--clr-anti-lighter);
+    color: var(--clr-anti);
 }
 
 .card__content > p {
