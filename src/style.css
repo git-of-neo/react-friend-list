@@ -1,0 +1,41 @@
+/* reset  */
+*, *::before, *::after{
+    box-sizing: border-box;    
+}
+
+*{
+    font: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+/* styling */
+* {
+    font-size: 16px;
+}
+
+.card-container {
+    background-color: orange;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    max-height: 5.5rem;
+    overflow: hidden;
+    transition: max-height .5s;
+    transition-timing-function: cubic-bezier(.16,.23,.77,.76);
+}
+
+.card-container:hover > .card{
+    max-height: 10rem;
+}
+
