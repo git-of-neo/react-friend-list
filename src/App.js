@@ -10,11 +10,23 @@ function App() {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const [friends, setFriends] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const getFriends = async () => {
-    const response = await fetch("https://randomuser.me/api/?seed=lll&page=1&results=25");
+    const response = await fetch(`https://randomuser.me/api/?seed=lll&page=${page}&results=25`);
     const data = await response.json();
     setFriends(data.results);
+  }
+
+  useEffect(()=>{
+    getFriends(page);
+  }, [page])
+
+  function handleSearch(e){
+    if (e.key==="Enter" && e.target.checkValidity()){
+      console.log(e.target.value);
+    }
   }
 
   function submit(e) {
@@ -22,7 +34,9 @@ function App() {
     
     let inpHash = sha256(passwordRef.current.value + SALT).toString();
     if (inpHash === HASHED_PASSWORD && USERNAME === usernameRef.current.value){
-      getFriends()
+      setLoggedIn(true);
+      setPage(1);
+      // getFriends(1);
       console.log(friends);
     } else {
       // TODO : login fail logiv
@@ -48,21 +62,15 @@ function App() {
         <input ref={passwordRef} id="password" defaultValue={"selena"}/>
         <button type='submit'>Log in</button>
       </form>
-
+    <input id="searchPage" placeholder='Page no.' type="number" min="1" max="25" onKeyDown={(e)=>{handleSearch(e)}}/>
     {
-      friends.length > 0 ? (
+      // TODO : unique key
+      loggedIn && friends.length > 0 &&
         <div className='friend-list'>
           {friends.map(x => {
             return <FriendCard friend = {x}/>
           })}
         </div>
-      )
-        :
-      (
-        <div>
-          <h2> No friends </h2>
-        </div>
-      )
     }
   </div>
   )
