@@ -48,7 +48,7 @@ function App() {
     display: "flex",
     flexDirection: "column"
   }
-
+  // TODO : input validation
   return (
     <div className="app">
       <form className = "login" style={style} onSubmit={submit}>
@@ -71,7 +71,6 @@ function App() {
       </>
     }
     {
-      // TODO : unique key
       loggedIn && friends.length > 0 &&
         <div className='friend-list'>
           {friends.map((x, idx) => {
