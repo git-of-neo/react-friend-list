@@ -19,7 +19,7 @@ const FriendCard = ({ friend }) => {
         </div>
         <dialog id={`model-${friend.idx}`} className="model-container">
             <div className="model">
-                <img src={friend.picture.medium}></img>
+                <img src={friend.picture.large}></img>
                 <div className="model__content">
                     <h2>{friend.name.first} {friend.name.last}</h2>
                     <p>{friend.phone}</p>
