@@ -36,9 +36,7 @@ function App() {
     if (inpHash === HASHED_PASSWORD && USERNAME === usernameRef.current.value){
       setLoggedIn(true);
       setPage(1);
-      console.log(friends);
     } else {
-      console.log("FAILED LOGIN");
       document.getElementById("log-in-fail").style.display = "block";
     }
   }
