@@ -68,25 +68,23 @@ function App() {
           <div class="error-message" id="log-in-fail">log in failed</div>
         </form>
     }
+    {
+      loggedIn &&
       <section className='friend-list'>
+        <h1> Friend List </h1>
+        <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
       {
-        loggedIn && 
-        <>
-          <h1> Friend List </h1>
-          <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
-        </>
+        friends.length > 0 &&
+        <div className='friend-list'>
+          {friends.map((x, idx) => {
+            x.idx = idx;
+            return <FriendCard key={`page-${idx}`} friend = {x}/>
+          })}
+        </div>
       }
-      {
-        loggedIn && friends.length > 0 &&
-          <div className='friend-list'>
-            {friends.map((x, idx) => {
-              x.idx = idx;
-              return <FriendCard key={`page-${idx}`} friend = {x}/>
-            })}
-          </div>
-      }
-    </section>
-  </div>
+      </section>
+    }
+    </div>
   )
 }
 
