@@ -1,7 +1,6 @@
 import React from 'react'
 
 const FriendCard = ({ friend }) => {
-    // TODO : fix this
     const openModal = () => {
         const modal = document.getElementById(`model-${friend.idx}`);
         modal.showModal();
