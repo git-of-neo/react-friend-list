@@ -41,6 +41,7 @@ function App() {
     } else {
       // TODO : login fail logiv
       console.log("FAILED LOGIN");
+      document.getElementById("log-in-fail").style.display = "block";
     }
   }
 
@@ -51,34 +52,40 @@ function App() {
   // TODO : input validation
   return (
     <div className="app">
-      <form className = "login" style={style} onSubmit={submit}>
-        <h1>Login</h1>
-        <label htmlFor="username">
-          <h2>Username</h2>
-        </label>
-        <input ref={usernameRef} id="username" defaultValue={"beautifultiger295"}/>
-        <label htmlFor="password">
-          <h2>Password</h2>
-        </label>
-        <input ref={passwordRef} type="password" id="password" defaultValue={"selena"}/>
-        <button type='submit'>Log in</button>
-      </form>
-    {
-      loggedIn && 
-      <>
-        <h1> Friend List </h1>
-        <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
-      </>
+      {
+        !loggedIn &&
+        <form className = "login" style={style} onSubmit={submit}>
+          <h1>Login</h1>
+          <label htmlFor="username">
+            <h2>Username</h2>
+          </label>
+          <input ref={usernameRef} id="username" defaultValue={"beautifultiger295"}/>
+          <label htmlFor="password">
+            <h2>Password</h2>
+          </label>
+          <input ref={passwordRef} type="password" id="password" defaultValue={"selena"}/>
+          <button type='submit'>Log in</button>
+          <div class="error-message" id="log-in-fail">log in failed</div>
+        </form>
     }
-    {
-      loggedIn && friends.length > 0 &&
-        <div className='friend-list'>
-          {friends.map((x, idx) => {
-            x.idx = idx;
-            return <FriendCard key={`page-${idx}`} friend = {x}/>
-          })}
-        </div>
-    }
+      <section className='friend-list'>
+      {
+        loggedIn && 
+        <>
+          <h1> Friend List </h1>
+          <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+        </>
+      }
+      {
+        loggedIn && friends.length > 0 &&
+          <div className='friend-list'>
+            {friends.map((x, idx) => {
+              x.idx = idx;
+              return <FriendCard key={`page-${idx}`} friend = {x}/>
+            })}
+          </div>
+      }
+    </section>
   </div>
   )
 }

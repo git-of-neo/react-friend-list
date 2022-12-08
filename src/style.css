@@ -36,6 +36,7 @@ img, picture, svg, video {
     --clr-anti-lighter-lighter: rgba(35, 35, 35, 0.6);
     --clr-primary-dark: #FC575E;
     --clr-primary-light: #F7B42C;
+    --clr-error: rgba(250, 0, 0, 1);
 }
 
 body {
@@ -95,8 +96,7 @@ button {
 }
 
 .app {
-    max-width: 40rem;
-    margin: 3rem;
+    padding: 3rem;
 }
 
 .login {
@@ -106,6 +106,23 @@ button {
     gap: .5rem;
     background-color: var(--clr-bg-lighter);
     border-radius: 1rem;
+}
+
+.friend-list {
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: var(--clr-bg-lighter);
+}
+
+@media(min-width: 550px){
+    .login {
+        width: 30rem;
+    }
+}
+
+.error-message {
+    display: none;
+    color: var(--clr-error);
 }
 
 .card-container {
