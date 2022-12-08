@@ -1,10 +1,14 @@
 import React from 'react'
 
 const FriendCard = ({ friend }) => {
-    const modal = document.getElementById(`model-${friend.idx}`);
+    // TODO : fix this
     const openModal = () => {
+        const modal = document.getElementById(`model-${friend.idx}`);
         modal.showModal();
     }
+    let date = new Date(friend.dob.date);
+    let dob = `${friend.idx} ${date.getFullYear()} ${date.getMonth()} ${date.getDay()}`
+    console.log(dob);
     return (
         <>
         <div className="card-container" onClick={()=>{openModal()}}>

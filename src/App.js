@@ -36,10 +36,8 @@ function App() {
     if (inpHash === HASHED_PASSWORD && USERNAME === usernameRef.current.value){
       setLoggedIn(true);
       setPage(1);
-      // getFriends(1);
       console.log(friends);
     } else {
-      // TODO : login fail logiv
       console.log("FAILED LOGIN");
       document.getElementById("log-in-fail").style.display = "block";
     }
@@ -65,7 +63,7 @@ function App() {
           </label>
           <input ref={passwordRef} type="password" id="password" defaultValue={"selena"}/>
           <button type='submit'>Log in</button>
-          <div class="error-message" id="log-in-fail">log in failed</div>
+          <div className="error-message" id="log-in-fail">log in failed</div>
         </form>
     }
     {
