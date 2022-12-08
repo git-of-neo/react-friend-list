@@ -113,6 +113,16 @@ button {
     border-radius: 1rem;
 }
 
+@media(max-width: 550px){
+    .app {
+        padding: 0rem;
+    }
+
+    .login {
+        padding: 0rem;
+    }
+}
+
 .friend-list {
     border-radius: 2rem;
     padding: 2rem;
@@ -140,7 +150,8 @@ button {
 
 .card {
     display: grid;
-    grid-template-columns: 15% 80%;
+    grid-template-columns: 20% 80%;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -153,6 +164,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    overflow-wrap: break-word;
 }
 
 .card__content > h2 {
