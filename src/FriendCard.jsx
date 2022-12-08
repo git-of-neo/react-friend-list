@@ -5,9 +5,11 @@ const FriendCard = ({ friend }) => {
         const modal = document.getElementById(`model-${friend.idx}`);
         modal.showModal();
     }
-    let date = new Date(friend.dob.date);
-    let dob = `${friend.idx} ${date.getFullYear()} ${date.getMonth()} ${date.getDay()}`
-    console.log(dob);
+    const closeModal = () => {
+        const modal = document.getElementById(`model-${friend.idx}`);
+        modal.close();
+    }
+    let dob = friend.dob.date.substring(0,10);
     return (
         <>
         <div className="card-container" onClick={()=>{openModal()}}>
@@ -22,13 +24,14 @@ const FriendCard = ({ friend }) => {
         </div>
         <dialog id={`model-${friend.idx}`} className="model-container">
             <div className="model">
+                <span className='model__exit' onClick={()=>{closeModal()}}>&#10539;</span>
                 <img src={friend.picture.large}></img>
                 <div className="model__content">
                     <h2>{friend.name.first} {friend.name.last}</h2>
                     <p>{friend.phone}</p>
                     <p>{friend.email}</p>
                     {/* additional info */}
-                    <p>{friend.dob.date}</p>
+                    <p>{dob}</p>
                     <p>{`${friend.location.street.number}, ${friend.location.street.name}, ${friend.location.city}, ${friend.location.state}, ${friend.location.country} `}</p>
                 </div>
             </div>

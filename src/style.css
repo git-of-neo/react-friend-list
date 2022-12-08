@@ -190,6 +190,13 @@ button {
     color: var(--clr-anti);
 }
 
+.model__exit {
+    font-size: 1.5rem;
+    margin-right: .5rem;
+    margin-left: auto;
+    width: fit-content;
+}
+
 #searchPage {
     width: 100%;
     text-align: center;
