@@ -37,6 +37,9 @@ img, picture, svg, video {
     --clr-primary-dark: #FC575E;
     --clr-primary-light: #F7B42C;
     --clr-error: rgba(250, 0, 0, 1);
+
+    /* border */
+    --size-border : 4px;
 }
 
 body {
@@ -67,8 +70,10 @@ h2 {
 input {
     padding: .5rem;
     border-radius: 10px;
-    border: 5px solid var(--color, var(--clr-neutral));
+    /* border: 5px solid var(--color, var(--clr-neutral)); */
+    border: var(--size-border) solid white;
     color: var(--clr-anti);
+    outline: none;
 }
 
 button {
@@ -197,9 +202,13 @@ button {
     width: fit-content;
 }
 
-#searchPage {
+.search {
     width: 100%;
     text-align: center;
+}
+
+.search:invalid {
+    border: var(--size-border) solid red;
 }
 
 /* remove input arrows */

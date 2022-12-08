@@ -70,7 +70,7 @@ function App() {
       loggedIn &&
       <section className='friend-list'>
         <h1> Friend List </h1>
-        <input id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
+        <input className= "search" id="searchPage" placeholder='Enter page no.' type="number" min="1" max="20" onKeyDown={(e)=>{handleSearch(e)}}/>
       {
         friends.length > 0 &&
         <div className='friend-list'>
